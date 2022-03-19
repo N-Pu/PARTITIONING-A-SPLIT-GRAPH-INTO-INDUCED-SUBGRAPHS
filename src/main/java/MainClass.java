@@ -10,7 +10,7 @@ public class MainClass {
 
 //      Objects that I need to start my program correctly.
         System.setProperty("org.graphstream.ui.renderer", "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
-        Graph graph = new SingleGraph("Random");
+        Graph graph = new SingleGraph("PARTITIONING A SPLIT GRAPH INTO INDUCED SUBGRAPHS");
         Styles style = new Styles();
         graph.setAttribute("ui.stylesheet", style.getStyleSheet());
         GeneratorClass gc = new GeneratorClass();
