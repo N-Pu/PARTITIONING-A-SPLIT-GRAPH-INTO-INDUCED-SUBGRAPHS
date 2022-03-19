@@ -21,7 +21,7 @@ public class MainClass {
         gc.generate(graph);
 
         cc.init(graph);
-        System.out.println("The list of components that we have  -> " + cc.getGiantComponent()); // prints all my components
+        System.out.println("\nThe list of components that we have  -> " + cc.getGiantComponent()); // prints all my components
 
 
 //      The end of them.
