@@ -71,17 +71,22 @@ public class GeneratorClass {
 //    };
 
     public void generate(Graph graph) {
+
         Generator gen = new RandomGenerator(3);
 //        Node node = new MultiNode((AbstractGraph) graph, "Random");
         gen.addSink(graph);
         gen.begin();
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 6; i++) {
             gen.nextEvents();
         }
         // For each node -> place a number
+        // And for each node -> get degree
+        int k = 0;
         for (Node node : graph) {
             node.setAttribute("ui.label", node.getId());
+            System.out.println("Node " + "[" + k + "]" + " degree is -> " + node.getDegree());
+            k++;
         }
 
         gen.end();
