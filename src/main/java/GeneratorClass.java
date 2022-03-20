@@ -1,3 +1,5 @@
+import org.graphstream.algorithm.DStar;
+import org.graphstream.algorithm.DynamicAlgorithm;
 import org.graphstream.algorithm.generator.Generator;
 import org.graphstream.algorithm.generator.GridGenerator;
 import org.graphstream.algorithm.generator.RandomGenerator;
@@ -8,69 +10,9 @@ import org.graphstream.graph.implementations.MultiNode;
 
 
 public class GeneratorClass {
-//    Generator generator = new Generator() {
-//        @Override
-//        public void begin() {
-//
-//        }
-//
-//        @Override
-//        public boolean nextEvents() {
-//            return false;
-//        }
-//
-//        @Override
-//        public void end() {
-//
-//        }
-//
-//        @Override
-//        public void addSink(Sink sink) {
-//
-//        }
-//
-//        @Override
-//        public void removeSink(Sink sink) {
-//
-//        }
-//
-//        @Override
-//        public void addAttributeSink(AttributeSink attributeSink) {
-//
-//        }
-//
-//        @Override
-//        public void removeAttributeSink(AttributeSink attributeSink) {
-//
-//        }
-//
-//        @Override
-//        public void addElementSink(ElementSink elementSink) {
-//
-//        }
-//
-//        @Override
-//        public void removeElementSink(ElementSink elementSink) {
-//
-//        }
-//
-//        @Override
-//        public void clearElementSinks() {
-//
-//        }
-//
-//        @Override
-//        public void clearAttributeSinks() {
-//
-//        }
-//
-//        @Override
-//        public void clearSinks() {
-//
-//        }
-//    };
 
-    public void generate(Graph graph) {
+
+    public Integer generate(Graph graph) {
 
         Generator gen = new RandomGenerator(3);
 //        Node node = new MultiNode((AbstractGraph) graph, "Random");
@@ -82,6 +24,7 @@ public class GeneratorClass {
         }
         // For each node -> place a number
         // And for each node -> get degree
+        // Also returns -> number of nodes
         int k = 0;
         for (Node node : graph) {
             node.setAttribute("ui.label", node.getId());
@@ -91,6 +34,8 @@ public class GeneratorClass {
 
         gen.end();
         graph.display();
+
+
 //        Square generation
 //
 //        Generator gen = new GridGenerator();
@@ -105,6 +50,8 @@ public class GeneratorClass {
 //
 //// Nodes already have a position.
 //        graph.display(false);
-
+        return k;
     }
+
+
 }

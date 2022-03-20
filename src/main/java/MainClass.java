@@ -2,6 +2,9 @@ import org.graphstream.algorithm.ConnectedComponents;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.SingleGraph;
+import org.graphstream.graph.Element;
+
+import java.util.*;
 
 
 public class MainClass {
@@ -15,15 +18,14 @@ public class MainClass {
         graph.setAttribute("ui.stylesheet", style.getStyleSheet());
         GeneratorClass gc = new GeneratorClass();
         ConnectedComponents cc = new ConnectedComponents();
+
+
 //      The end of them.
 
 //      Methods to generate graph.
-        gc.generate(graph);
 
         cc.init(graph);
-        System.out.println("\nThe list of components that we have  -> " + cc.getGiantComponent()); // prints all my components
-
-
+        System.out.println("\nThe list of components that we have  -> " + gc.generate(graph)); // prints all my components
 //      The end of them.
     }
 }
