@@ -5,6 +5,8 @@ import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.AbstractGraph;
 import org.graphstream.graph.implementations.MultiNode;
+import org.graphstream.stream.AttributeSink;
+
 
 
 public class GeneratorClass {
@@ -13,6 +15,7 @@ public class GeneratorClass {
 
     public Integer generate(Graph graph) {
         Generator gen = new RandomGenerator(3, true, false);
+
 //        Node node = new MultiNode((AbstractGraph) graph, "Random");
         gen.addSink(graph);
         gen.begin();
@@ -28,7 +31,12 @@ public class GeneratorClass {
             node.setAttribute("ui.label", node.getId());
             System.out.println("Node " + "[" + k + "]" + " degree is -> " + node.getDegree());
             k++;
+            System.out.println(node.getAttributeKeyIterator());
+            System.out.println(node.getEachEdge());
+            System.out.println(node.getEdgeIterator());
+            System.out.println(node.getEachEnteringEdge());
         }
+
 
         gen.end();
         graph.display();
