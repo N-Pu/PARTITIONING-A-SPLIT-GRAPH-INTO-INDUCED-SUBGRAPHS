@@ -1,20 +1,17 @@
-import org.graphstream.algorithm.DStar;
-import org.graphstream.algorithm.DynamicAlgorithm;
 import org.graphstream.algorithm.generator.*;
 import org.graphstream.graph.Graph;
 import org.graphstream.graph.Node;
-import org.graphstream.graph.implementations.AbstractGraph;
-import org.graphstream.graph.implementations.MultiNode;
-import org.graphstream.stream.AttributeSink;
 
 
 
 public class GeneratorClass {
 
+
     //  Generator g = new GridGenerator(true, false); -> square graph that I need
 
     public Integer generate(Graph graph) {
         Generator gen = new RandomGenerator(3, true, false);
+
 
 //        Node node = new MultiNode((AbstractGraph) graph, "Random");
         gen.addSink(graph);
@@ -35,6 +32,9 @@ public class GeneratorClass {
             System.out.println(node.getEachEdge());
             System.out.println(node.getEdgeIterator());
             System.out.println(node.getEachEnteringEdge());
+            System.out.println(node.getId());
+            System.out.println(node.getEachEdge());
+
         }
 
 
