@@ -1,6 +1,6 @@
 public class Styles {
 
-//  My styles for graph nodes and edges.
+    //  My styles for graph nodes and edges.
     public String getStyleSheet() {
         return styleSheet;
     }
@@ -14,5 +14,17 @@ public class Styles {
                     "node {" +
                     "	size: 20px;" +
                     "	fill-color: #00a86b;" +
+                    "}";
+
+
+    public String getStyleEdge() {
+        return styleEdge;
+    }
+
+    private static final String styleEdge =
+            "edge {" +
+                    "	size: 2px;" +
+                    "	fill-color:yellow;" +
+                    "	fill-mode: dyn-plain;" +
                     "}";
 }

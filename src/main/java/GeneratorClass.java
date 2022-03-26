@@ -14,7 +14,7 @@ public class GeneratorClass {
 
     public Integer generate(Graph graph) {
         Generator gen = new RandomGenerator(3, true, false);
-//        Edge edge = new GraphicEdge("PARTITIONING INTO SUBGRAPHS", Map<Integer, Integer>, true, Map<String, String>);
+//     Edge edge = new GraphicEdge("PARTITIONING INTO SUBGRAPHS", Map<Integer, Integer>, true, Map<String, String>);
         Edge edge = new Edge() {
             @Override
             public boolean isDirected() {
@@ -214,10 +214,17 @@ public class GeneratorClass {
             System.out.println(node.getEachEnteringEdge());
             System.out.println(node.getId());
             System.out.println(node.getEachEdge());
+            System.out.println(edge.getOpposite(node));
 //            System.out.println(edge.));
 
 
         }
+
+
+
+        graph.getEdgeSet().forEach(e -> System.out.println(e.getId()));
+
+
 
 
 
