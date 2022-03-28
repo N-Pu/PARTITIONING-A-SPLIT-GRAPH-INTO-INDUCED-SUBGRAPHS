@@ -18,6 +18,7 @@ public class MainClass {
         graph.setAttribute("ui.stylesheet", style.getStyleSheet());
         GeneratorClass gc = new GeneratorClass();
         ConnectedComponents cc = new ConnectedComponents();
+        MyFullGenerator mfg = new MyFullGenerator();
 
 
 //      The end of them.
@@ -26,6 +27,12 @@ public class MainClass {
 
         cc.init(graph);
         System.out.println("\nThe list of components that we have  -> " + gc.generate(graph)); // prints all my components
+
+        mfg.addNode();
+        mfg.addNode();
+        mfg.addNode();
+
+
 //      The end of them.
     }
 }
